@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 public class LoginTest {
 
+    // Test that a correctly formatted username returns true 
     @Test
     public void checkUserName() {
 
@@ -19,6 +20,7 @@ public class LoginTest {
         assertTrue(user.checkUserName());
     }
 
+    // Test that a incorrectly formatted username returns false 
     @Test
     public void testUsernameIncorrectlyFormatted() {
 
@@ -33,6 +35,7 @@ public class LoginTest {
         assertFalse(user.checkUserName());
     }
 
+    // Test that the password meets all the complexity rules and returns true 
     @Test
     public void testPasswordMeetsComplexity() {
 
@@ -47,6 +50,7 @@ public class LoginTest {
         assertTrue(user.checkPasswordComplexity());
     }
 
+    // Test that a password not meeting the complexity rules returns false 
     @Test
     public void testPasswordDoesNotMeetComplexity() {
 
@@ -61,6 +65,7 @@ public class LoginTest {
         assertFalse(user.checkPasswordComplexity());
     }
 
+    // Test that a correctly formatted South African cellphone number returns true
     @Test
     public void testCellPhoneCorrectlyFormatted() {
 
@@ -75,6 +80,7 @@ public class LoginTest {
         assertTrue(user.checkCellPhoneNumber());
     }
 
+    // Test that an incorrectly formatted South African cellphone number returns false 
     @Test
     public void testCellPhoneIncorrectlyFormatted() {
 
@@ -89,6 +95,7 @@ public class LoginTest {
         assertFalse(user.checkCellPhoneNumber());
     }
 
+    // Tests that the correct username and password result in a successful login 
     @Test
     public void testLoginSuccessful() {
 
@@ -108,6 +115,7 @@ public class LoginTest {
         assertTrue(user.loginUser());
     }
 
+    // Tests that incorrect login details result in a failed login 
     @Test
     public void testLoginFailed() {
 
