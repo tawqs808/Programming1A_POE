@@ -6,14 +6,17 @@ public class Programming1A_POE {
 
     public static void main(String[] args) {
 
+        // Scanner is used to collect input from the user 
         Scanner input = new Scanner(System.in);
 
         System.out.println("WELCOME TO THE CHAT APP");
         System.out.println("-----------------------");
 
+        // Collect the users personal information
         System.out.print("Enter your first name: ");
         String firstName = input.nextLine();
 
+         // Collect the users personal information
         System.out.print("Enter your last name:");
         String lastName = input.nextLine();
 
@@ -21,15 +24,19 @@ public class Programming1A_POE {
         System.out.println("CREATE AN ACCOUNT");
         System.out.println("-----------------");
 
+        // Collects users registration details 
         System.out.print("Enter a username: ");
         String username = input.nextLine();
 
+        // Collects users registration details
         System.out.print("Enter a password: ");
         String password = input.nextLine();
 
+        // Collects users registration details
         System.out.print("Enter your South African cell phone number (+27): ");
         String cellPhoneNumber = input.nextLine();
 
+        // Create a login object using the information entered by the user 
         Login user = new Login(
                 firstName,
                 lastName,
@@ -40,6 +47,7 @@ public class Programming1A_POE {
 
         System.out.println();
 
+        // Checks if the user name is correctly formatted 
         if (user.checkUserName()) {
             System.out.println("Username successfully captured.");
         } else {
@@ -50,6 +58,7 @@ public class Programming1A_POE {
             );
         }
 
+        // Checks if the password meets the required complexity rules 
         if (user.checkPasswordComplexity()) {
             System.out.println("Password successfully captured.");
         } else {
@@ -60,6 +69,7 @@ public class Programming1A_POE {
             );
         }
 
+        // Checks if the South African cellphone number is correctly formatted 
         if (user.checkCellPhoneNumber()) {
             System.out.println("Cell phone number successfully added.");
         } else {
@@ -74,6 +84,7 @@ public class Programming1A_POE {
                 && user.checkPasswordComplexity()
                 && user.checkCellPhoneNumber()) {
 
+            // Only allow user to login if the registration is successful
             System.out.println();
             System.out.println("REGISTRATION SUCCESSFUL");
 
@@ -87,8 +98,10 @@ public class Programming1A_POE {
             System.out.print("Enter password: ");
             String loginPassword = input.nextLine();
 
+            // Store the login details entered by the user 
             user.setLoginDetails(loginUsername, loginPassword);
 
+            // Display whether the login was successful or unsuccessful
             System.out.println();
             System.out.println(user.returnLoginStatus());
 
